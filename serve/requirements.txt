@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pandas==2.2.3
+numpy>=2.0
+scikit-learn==1.6.1
+joblib==1.4.2
+pyarrow==19.0.0
+PyYAML==6.0.2
+optuna==4.4.0
+matplotlib==3.10.1
+seaborn==0.13.2

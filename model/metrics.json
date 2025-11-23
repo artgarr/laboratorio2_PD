@@ -1,0 +1,1 @@
+{"model": "RandomForestClassifier", "accuracy": 0.7772, "predictions_served": 100, "avg_response_time_seconds": 0.21478796005249023, "last_training": "2025-11-23"}
