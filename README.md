@@ -30,6 +30,8 @@ model/model.pkl → modelo entrenado
 
 model/metrics.json → métricas del entrenamiento
 
+data/input_test.parquet → muestra aleatorio del dataset original (que se puede utilizar o no en el despliegue, o bien se generar uno propio para utilizarlo)
+
 ### 4. Despliegue en producción
 
 #### Modo API
@@ -63,5 +65,4 @@ docker run --rm `
 
 Esto genera :
 
-data/input_test.parquet → muestra aleatorio del dataset original
 data/output_preds.parquet → predicciones de la muestra de datos
