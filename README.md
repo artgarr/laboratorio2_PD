@@ -53,7 +53,7 @@ GET /metrics → Genera la información relevante como
  
 GET /docs → Nos muestra la documentación del API para consultar
 
-POST /predics →
+POST /predics → en el endpoint de docs se puede subir una consulta personalizada. En el archivo test_predict.ipynb esta un ejercicio utilizando un sample de datos del hotel_bookings.csv para consultar y generar una predicción.
 
 #### Modo Batch
 docker run --rm `
