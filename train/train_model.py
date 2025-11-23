@@ -43,7 +43,6 @@ dataset['is_weekend'] = dataset['day_of_week'].isin([5, 6]).astype(int)
 # Generando Parquet
 # ============================
 
-
 # Eliminar la columna objetivo
 df_features = dataset.drop(columns=["is_canceled"])
 
