@@ -22,9 +22,9 @@ METRICS_FILE = "/app/model/metrics.json"
 modelo = joblib.load(MODEL_FILE)
 
 def actualizar_metricas(tiempo_respuesta: float, cantidad_predicciones: int):
-    """
-    Actualiza el archivo de métricas con el tiempo de respuesta y número de predicciones.
-    """
+
+    #Se actualiza el archivo de métricas con el tiempo de respuesta y número de predicciones.
+
     try:
         with open(METRICS_FILE, "r", encoding="utf-8") as f:
             metrics = json.load(f)
@@ -42,9 +42,9 @@ def actualizar_metricas(tiempo_respuesta: float, cantidad_predicciones: int):
 
 @api.post("/predict")
 def generar_predicciones(payload: dict = Body(...)):
-    """
-    Endpoint para recibir datos en formato JSON y devolver predicciones.
-    """
+
+    # Endpoint para recibir datos en formato JSON y devolver predicciones.
+
     try:
         inicio = time.time()
 
@@ -66,9 +66,9 @@ def generar_predicciones(payload: dict = Body(...)):
 
 @api.get("/metrics")
 def obtener_metricas():
-    """
-    Devuelve las métricas actuales del modelo en formato JSON.
-    """
+
+    #Devuelve las métricas actuales del modelo en formato JSON.
+
     try:
         with open(METRICS_FILE, "r", encoding="utf-8") as f:
             metrics = json.load(f)
@@ -77,9 +77,8 @@ def obtener_metricas():
         raise HTTPException(status_code=404, detail="Archivo de métricas no encontrado.")
 
 def modo_batch():
-    """
-    Ejecuta predicciones en modo batch: lee un archivo Parquet y guarda las predicciones en otro.
-    """
+    # Ejecuta predicciones en modo batch: lee un archivo Parquet y guarda las predicciones en otro.
+
     inicio = time.time()
 
     parser = argparse.ArgumentParser(description="Modo batch para predicciones")
@@ -97,7 +96,7 @@ def modo_batch():
     actualizar_metricas(tiempo, len(predicciones))
 
 if __name__ == "__main__":
-    # Si se pasa argumento --input, ejecutamos batch; si no, levantamos API
+    # Si se pasa argumento --input, ejecutamos batch; si no se levanta modo API
     if any(arg.startswith("--input") for arg in os.sys.argv):
         modo_batch()
     else:
