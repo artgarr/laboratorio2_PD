@@ -30,7 +30,7 @@ model/model.pkl → modelo entrenado
 
 model/metrics.json → métricas del entrenamiento
 
-data/input_test.parquet → muestra aleatorio del dataset original (que se puede utilizar o no en el despliegue, o bien se generar uno propio para utilizarlo)
+data/input_test.parquet → muestra aleatorio del dataset original (que se puede utilizar o no en el despliegue, o bien se generar uno propio para utilizarlo ya que es completamente independiente)
 
 ### 4. Despliegue en producción
 
